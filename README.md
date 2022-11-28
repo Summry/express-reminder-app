@@ -2,6 +2,14 @@
 
 This github repo contains files for a reminder app project.
 
+# <ins>**Table of Content**</ins>
+- [**2520 Reminder App**](#2520-reminder-app)
+- [**Table of Content**](#table-of-content)
+- [**Members**](#members)
+- [**Installation**](#installation)
+- [**Goals**](#goals)
+- [**Running the Application**](#running-the-application)
+
 # <ins>**Members**</ins>
 
 - Nazira Fakhrurradi (A01279940) - Set B
