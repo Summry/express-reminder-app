@@ -43,7 +43,7 @@ let remindersController = {
   update: (req, res) => {
     // implement this code
     let searchResult = database.cindy.reminders.find(function (reminder) {
-      if (reminderToEdit.id == reminder.id) {
+      if (req.params.id == reminder.id) {
         reminder.title = req.body.title
         reminder.description = req.body.description
         reminder.completed = (req.body.completed === "true")
