@@ -1,8 +1,7 @@
 const { userModel } = require("../database");
 
-let remindersController = {
+const remindersController = {
   list: (req, res) => {
-    console.log(req.user);
     const user = userModel.findById(req.user.id);
     res.render("reminder/index", { reminders: user.reminders });
   },
@@ -12,9 +11,9 @@ let remindersController = {
   },
 
   listOne: (req, res) => {
-    let reminderToFind = req.params.id;
+    const reminderToFind = req.params.id;
     const user = userModel.findById(req.user.id)
-    let searchResult = user.reminders.find(function (reminder) {
+    const searchResult = user.reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
     if (searchResult != undefined) {
@@ -26,7 +25,7 @@ let remindersController = {
 
   create: (req, res) => {
     const user = userModel.findById(req.user.id);
-    let reminder = {
+    const reminder = {
       id: user.reminders.length + 1,
       title: req.body.title,
       description: req.body.description,
@@ -37,9 +36,9 @@ let remindersController = {
   },
 
   edit: (req, res) => {
-    let reminderToFind = req.params.id;
+    constreminderToFind = req.params.id;
     const user = userModel.findById(req.user.id)
-    let searchResult = user.reminders.find(function (reminder) {
+    constsearchResult = user.reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
     res.render("reminder/edit", { reminderItem: searchResult });
@@ -48,7 +47,7 @@ let remindersController = {
   update: (req, res) => {
     // implement this code
     const user = userModel.findById(req.user.id);
-    let searchResult = user.reminders.find(function (reminder) {
+    constsearchResult = user.reminders.find(function (reminder) {
       if (req.params.id == reminder.id) {
         reminder.title = req.body.title
         reminder.description = req.body.description
@@ -65,7 +64,7 @@ let remindersController = {
     const reminderID = req.params.id
     let index = 0
     const user = userModel.findById(req.user.id)
-    let searchResult = user.reminders.find(function (reminder) {
+    constsearchResult = user.reminders.find(function (reminder) {
       if (reminderID == reminder.id) {
         user.reminders.splice(index, 1)
         return true
