@@ -1,7 +1,6 @@
 const database = [
 	{
 		id: 1, // user id
-		name: "Cindy Well",
 		email: "cindy123@gmail.com",
 		password: "cindy123!",
 		reminders: [
@@ -20,8 +19,7 @@ const database = [
 		]
 	},
 	{
-		id: 1, // user id
-		name: "Bob Smith",
+		id: 2, // user id
 		email: "bob123@gmail.com",
 		password: "bob123!",
 		reminders: [
@@ -56,6 +54,12 @@ const userModel = {
 		}
 		throw new Error(`Couldn't find user with id: ${id}`);
 	},
+	getLength: () => {
+		return database.length;
+	},
+	create: (user) => {
+		database.push(user);
+	}
 };
 
 module.exports = { database, userModel };
