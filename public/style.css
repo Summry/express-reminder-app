@@ -134,3 +134,11 @@ footer.footer {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
+.logout-header {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
