@@ -1,6 +1,7 @@
 const passport = require("../middleware/passport");
+const userModel = require("../database").userModel;
 
-let authController = {
+const authController = {
   login: (req, res) => {
     res.render("auth/login");
   },
@@ -9,20 +10,25 @@ let authController = {
     res.render("auth/register");
   },
 
-  loginSubmit: (req, res) => {
+  loginSubmit: (req, res, next) => {
     // implement
     passport.authenticate("local", {
       successRedirect: "/reminders",
       failureRedirect: "/login",
-    })(req, res);
+    })(req, res, next);
   },
 
   registerSubmit: (req, res) => {
     // implement
-    passport.authenticate("local", {
-      successRedirect: "/reminders",
-      failureRedirect: "/register",
-    })(req, res);
+    const dbLength = userModel.getLength();
+    const user = {
+      id: dbLength + 1,
+      email: req.body.email,
+      password: req.body.password,
+      reminders: [],
+    };
+    userModel.create(user);
+    res.redirect("/login");
   },
 
   logoutSubmit: (req, res) => {
