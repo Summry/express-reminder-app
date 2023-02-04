@@ -1,28 +1,24 @@
-# <ins>**2520 Reminder App**</ins>
+# <ins>**Express Reminder App**</ins>
 
 This github repo contains files for a reminder app project.
 
 # <ins>**Table of Content**</ins>
-- [**2520 Reminder App**](#2520-reminder-app)
+- [**Express Reminder App**](#express-reminder-app)
 - [**Table of Content**](#table-of-content)
 - [**Members**](#members)
-- [**Installation**](#installation)
+- [**Installation and setup**](#installation-and-setup)
 - [**Week 1 Goals**](#week-1-goals)
 - [**Week 2 Goals**](#week-2-goals)
-- [**Running the Application**](#running-the-application)
 
-# <ins>**Members**</ins>
+# <ins>**Installation and setup**</ins>
 
-- Nazira Fakhrurradi (A01279940) - Set B
+Clone the repo: `git clone https://github.com/Summry/express-reminder-app.git`
 
-# <ins>**Installation**</ins>
-
-Clone the repo: `git clone https://github.com/Summry/2520-Reminder-App.git`
-
-Install the required packages:
+Install the required packages and start the server on localhost 3001:
 
 ```
-npm install
+npm i
+npm start
 ```
 
 # <ins>**Week 1 Goals**</ins>
@@ -36,11 +32,3 @@ npm install
 2. Authenticated Users should only see their own reminders
 3. Authenticated Users should only edit their own reminders
 4. Authenticated Users should only delete their own reminders
-
-# <ins>**Running the Application**</ins>
-
-To run the application,
-
-```
-npm start
-```
